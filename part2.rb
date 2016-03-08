@@ -31,6 +31,16 @@ low_budget = Array.new
 leonardo_movies = Array.new
 
 movies.each do |movie_hsh|
-  
+  budget = movie_hsh[:budget]
+  stars = movie_hsh[:stars]
+  if budget < 100 then low_budget.push(movie_hsh[:title]) end
+
+  stars.each do |star|
+    if star == "Leonardo DiCaprio" then leonardo_movies.push(movie_hsh[:title]) end
+  end
 
 end
+
+print low_budget
+puts
+print leonardo_movies
